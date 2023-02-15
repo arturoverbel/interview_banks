@@ -7,5 +7,5 @@ class Bank(models.Model):
         help_text="Nombre del Banco",
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
