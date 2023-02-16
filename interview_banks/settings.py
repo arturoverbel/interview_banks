@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bank.apps.BankConfig',
+    'drf_yasg',
     'rest_framework',
-    "accounts",
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/providers'
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+STATICFILES_DIRS = [Path(BASE_DIR, 'static')]
+VENV_PATH = Path(BASE_DIR)
+STATIC_ROOT = Path(VENV_PATH, 'static_root')
