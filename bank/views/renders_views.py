@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
-from ..models import Provider
+from ..models import Provider, Bank
 
 def index(request):
 
@@ -26,3 +26,14 @@ def get_provider(request, pk):
     }
 
     return render(request, "provider.html", context)
+
+def dashboard(request):
+    len_provider = len(Provider.objects.all())
+    len_bank = len(Bank.objects.all())
+
+    context = {
+        "len_provider": len_provider,
+        "len_bank": len_bank
+    }
+
+    return render(request, "dashboard.html", context)
