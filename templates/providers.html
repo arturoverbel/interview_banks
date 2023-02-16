@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact Name</th>
+            <th scope="col">Contact Phone</th>
+            <th scope="col">Bank</th>
+            <th scope="col">Account Bank</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for provider in providers %}
+        <tr>
+            <th scope="row">{{ provider.id }}</th>
+            <td><a href="/provider/{{provider.id}}/">{{ provider.name }}</a></td>
+            <td>{{ provider.contact_name }}</td>
+            <td>{{ provider.contact_phone }}</td>
+            <td>{{ provider.bank }}</td>
+            <td>{{ provider.account_bank }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

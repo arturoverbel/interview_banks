@@ -1,1 +1,1 @@
-__all__ = ["bank_views"]
+__all__ = ["bank_views", "provider_views", "provider_renders_views"]

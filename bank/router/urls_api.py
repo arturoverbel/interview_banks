@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import bank_views, provider_views
+from ..views import bank_views, provider_views
 
 urlpatterns = [
     path('', bank_views.Api, name='api banks'),

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<form>
+    <div class="form-group">
+        ID: <input type="text" value="{{ provider.id }}" disabled>
+    </div>
+    <div class="form-group">
+        Name: <input type="text" value="{{ provider.name }}" disabled>
+    </div>
+    <div class="form-group">
+        NIT: <input type="text" value="{{ provider.NIT }}" disabled>
+    </div>
+    <div class="form-group">
+        Contact Name: <input type="text" value="{{ provider.contact_name }}" disabled>
+    </div>
+    <div class="form-group">
+        Contact Phone: <input type="text" value="{{ provider.contact_phone }}" disabled>
+    </div>
+    <div class="form-group">
+        Bank: <input type="text" value="{{ provider.bank }}" disabled>
+    </div>
+    <div class="form-group">
+        Account Bank: <input type="text" value="{{ provider.account_bank }}" disabled>
+    </div>
+
+</form>
+{% endblock content %}
