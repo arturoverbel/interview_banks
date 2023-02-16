@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from .serializer import BankSerializer
+from ..serializer import BankSerializer
 from rest_framework import status, serializers
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Bank
+from ..models import Bank
 
 @api_view(['GET'])
 def Api(request):
@@ -43,7 +43,7 @@ def get_banks(request):
 @api_view(['PUT'])
 def update_banks(request, pk):
     bank = Bank.objects.get(pk=pk)
-    data = BankSerializer(instance=bank, data=request.data)
+    data = BankSerializer(instance=bank, data=request.data, partial=True)
  
     if data.is_valid():
         data.save()
